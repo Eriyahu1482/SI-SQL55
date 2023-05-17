@@ -1,0 +1,69 @@
+﻿<Page x:Class="SI_SQL55.View.Pages.SingupPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="900"
+      Title="SingupPage">
+    <Border>
+        <Grid>
+            <Image Source="/Images/Sign Up.png"
+                   Stretch="Fill"/>
+            <StackPanel
+                Width="200"
+                Height="350"
+                Margin="0,0,-340,50"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom">
+                <TextBox
+                    Width="170"
+                    Height="50"
+                    Margin="0,20,0,0"
+                    materialDesign:HintAssist.Hint="Full Name"
+                    AcceptsReturn="True"
+                    IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    VerticalScrollBarVisibility="Auto" />
+                <TextBox
+                    Width="170"
+                    Height="50"
+                    Margin="0,20,0,0"
+                    materialDesign:HintAssist.Hint="Email"
+                    AcceptsReturn="True"
+                    IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextBoxEnabledComboBox}"
+                    Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                    VerticalScrollBarVisibility="Auto" />
+                <PasswordBox
+                    Width="170"
+                    Height="50"
+                    Margin="0 20 0 0"
+                    VerticalAlignment="Top"
+                    materialDesign:HintAssist.Hint="Password"
+                    IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedPasswordBoxEnabledComboBox}"
+                    Style="{StaticResource MaterialDesignOutlinedPasswordBox}" />
+                <Button
+                    Margin="0 40 0 0"
+                    Content="Create Account"
+                    Width="150"
+                    x:Name="LogIn"
+                    Click="Create_Click"
+                    Style="{StaticResource BtnMain}" />
+            </StackPanel>
+            <StackPanel
+                Width="190"
+                Height="20"
+                Margin="0,30,0,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <TextBlock Style="{StaticResource SingUp}" Text="Have an account?" />
+                <TextBlock
+                    MouseDown="TextBlock_MouseDown"
+                    Style="{StaticResource SingUP}"
+                    Text="Sign in!" />
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

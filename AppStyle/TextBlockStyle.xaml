@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="SingUp" TargetType="TextBlock">
+        <Setter Property="TextElement.FontFamily" Value="/Font/#Poppins BoldItalic" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="SingUP" TargetType="TextBlock">
+        <Setter Property="TextElement.FontFamily" Value="/Font/#Poppins BoldItalic" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Foreground" Value="ForestGreen" />
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="Green" />
+                <Setter Property="TextDecorations" Value="Underline" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
