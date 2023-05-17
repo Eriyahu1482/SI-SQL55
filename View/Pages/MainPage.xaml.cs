@@ -9,11 +9,11 @@ namespace SI_SQL55.View.Pages
 {
     public partial class MainPage : Page
     {
-        private DataContext? _db = null;
+        private ModelContext? _db = null;
         public MainPage()
         {
             InitializeComponent();
-            _db = new DataContext();
+            _db = new ModelContext();
         }
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
@@ -21,9 +21,17 @@ namespace SI_SQL55.View.Pages
 
             if (userModel != null)
             {
-                switch (userModel.Role.RoleID) 
+                switch (userModel.Role.RoleID)
                 {
-
+                    case 1:
+                        new AdminWindow();
+                        break;
+                    case 2:
+                        new UserWindow();
+                        break;
+                    case 3:
+                        new RacoonWindow();
+                        break;
                 }
             }
             else
