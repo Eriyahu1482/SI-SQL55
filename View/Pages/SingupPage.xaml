@@ -1,16 +1,17 @@
-﻿<Page x:Class="SI_SQL55.View.Pages.SingupPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="900"
-      Title="SingupPage">
+﻿<Page
+    x:Class="SI_SQL55.View.Pages.SingupPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="SingupPage"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    mc:Ignorable="d">
     <Border>
         <Grid>
-            <Image Source="/Images/Sign Up.png"
-                   Stretch="Fill"/>
+            <Image Source="/Images/Sign Up.png" Stretch="Fill" />
             <StackPanel
                 Width="200"
                 Height="350"
@@ -18,6 +19,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom">
                 <TextBox
+                    x:Name="TbName"
                     Width="170"
                     Height="50"
                     Margin="0,20,0,0"
@@ -27,6 +29,7 @@
                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
                     VerticalScrollBarVisibility="Auto" />
                 <TextBox
+                    x:Name="TbLogin"
                     Width="170"
                     Height="50"
                     Margin="0,20,0,0"
@@ -36,27 +39,28 @@
                     Style="{StaticResource MaterialDesignOutlinedTextBox}"
                     VerticalScrollBarVisibility="Auto" />
                 <PasswordBox
+                    x:Name="TbPass"
                     Width="170"
                     Height="50"
-                    Margin="0 20 0 0"
+                    Margin="0,20,0,0"
                     VerticalAlignment="Top"
                     materialDesign:HintAssist.Hint="Password"
                     IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedPasswordBoxEnabledComboBox}"
                     Style="{StaticResource MaterialDesignOutlinedPasswordBox}" />
                 <Button
-                    Margin="0 40 0 0"
-                    Content="Create Account"
-                    Width="150"
                     x:Name="LogIn"
+                    Width="150"
+                    Margin="0,40,0,0"
                     Click="Create_Click"
+                    Content="Create Account"
                     Style="{StaticResource BtnMain}" />
             </StackPanel>
             <StackPanel
                 Width="190"
                 Height="20"
                 Margin="0,30,0,0"
-                VerticalAlignment="Top"
                 HorizontalAlignment="Right"
+                VerticalAlignment="Top"
                 Orientation="Horizontal">
                 <TextBlock Style="{StaticResource SingUp}" Text="Have an account?" />
                 <TextBlock

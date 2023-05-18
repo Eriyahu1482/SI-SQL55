@@ -19,22 +19,29 @@ namespace SI_SQL55.View.Pages
         {
             User? userModel = _db?.Users.FirstOrDefault(predicate: x => x.Login == TbLogin.Text && x.Password == TbPass.Password);
 
-            if (userModel != null)
+            try
             {
-                switch (userModel.Role.RoleID)
+                if (userModel != null)
                 {
-                    case 1:
-                        new AdminWindow();
-                        break;
-                    case 2:
-                        new UserWindow();
-                        break;
-                    case 3:
-                        new RacoonWindow();
-                        break;
+                    switch (userModel.Role.RoleID)
+                    {
+                        case 1:
+                            new AdminWindow();
+                            break;
+                        case 2:
+                            new UserWindow();
+                            break;
+                        case 3:
+                            new RacoonWindow();
+                            break;
+                    }
+                }
+                else
+                {
+                    new ErrorWindow().ShowDialog();
                 }
             }
-            else
+            catch
             {
                 new ErrorWindow().ShowDialog();
             }

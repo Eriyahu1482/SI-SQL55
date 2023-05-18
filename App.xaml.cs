@@ -9,7 +9,7 @@ namespace SI_SQL55
         protected override void OnStartup(StartupEventArgs e)
         {
             new MainWindow().Show();
-            DatabaseFacade facade = new DatabaseFacade(new DataContext());
+            DatabaseFacade facade = new DatabaseFacade(new ModelContext());
 
 
             facade.EnsureCreated();
